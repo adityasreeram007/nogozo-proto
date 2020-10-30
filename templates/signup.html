@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Poppins:wght@300&display=swap" rel="stylesheet"> 
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Peddana&display=swap" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Norozo</title>
+</head>
+<style>
+
+    img{
+        margin-bottom: 2%;
+    }
+    body{
+        font-family: 'Poppins';
+        background-color: white;
+    }
+    .box{
+        margin-top:25% ;
+        width:80%;
+
+    }
+    .inps{
+        margin-top: 2%;
+        width: 40%;
+        border-radius: 6px;
+        border-style: solid;
+        border-color: black;
+        height:40px;
+        text-align: center;
+    }
+    ::placeholder{
+        font-family: 'Poppins';
+        text-align:center;
+    }
+   
+    .inps1{
+        margin-top: 2%;
+        width: 30%;
+        border-radius: 6px;
+        border-style: solid;
+        border-color: black;
+        height:40px;
+        text-align: center;
+    }
+    .btn1{
+        width:40%;
+        margin-top: 2%;
+    }
+    .btn2{
+        width:15%;
+        margin-top: 2%;
+    }
+    .small{
+        width: 10%;
+    }
+    .heading{
+        margin-top: 2%;
+        font-size:3vh;
+        font-family: 'Sofia';
+    }
+</style>
+<body>
+    <div class="container">
+        
+        <center>
+            <div class="box">
+    <div class="head"><img src="https://www.nogozo.com/static/mainapp/img/logo.png" height="80px" width="15%"></div></div>
+    <span class="heading">SignUp</span>
+    <form method="POST" action="/register">
+        <input class="inps" type="text" name="email" id="email" placeholder="E-mail" onkeyup="update()" required/><br>
+        <input class="inps" type="password" id="password" name="pass" placeholder="Password" onkeyup="check()" required/><br>
+        <input class="inps" type="password" id="confirm_password" name="confpass" placeholder="Confirm Password" onkeyup="check()" required/><br>
+        <div class="number">
+            <button class="btn small">+91</button>
+        <input class="inps1" type="text" placeholder="Phone" name="phone" required/></div><br>
+        <span id='message'></span><br>
+        <button class="btn btn-info btn1" id="submitbt">Register & Proceed ></button>
+       
+
+    </form>
+    </center>
+</div>
+</body>
+</html>
+<script>
+    var email="";
+    var check = function() {
+  if (document.getElementById('password').value ==
+    document.getElementById('confirm_password').value) {
+        document.getElementById('message').innerHTML = '';
+        document.getElementById('submitbt').disabled=false;
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'PassWord Doesn"t Match';
+    document.getElementById('submitbt').disabled=true;
+  }
+}
+function update(){
+    localStorage.setItem('auth',false)
+    email=document.getElementById('email').value;
+    localStorage.setItem('email',email)
+    console.log(localStorage.getItem('email'))
+}
+</script>
