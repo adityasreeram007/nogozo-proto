@@ -30,11 +30,18 @@
             width: 100%;
             
         }
-        .mySlides{margin-top:5%;height: 600px;background-position: center;margin-bottom: 5%;border-radius: 5px;border-style:solid;border-color: aliceblue;}
+        .mySlides{margin-top:5%;height: 40%;min-height: 40%; background-position: center;margin-bottom: 5%;border-radius: 5px;border-style:solid;border-color: aliceblue;}
         .heading{
         margin-top: 2%;
         font-size:3vh;
         font-family: 'Sofia';
+        margin-bottom: 2%;
+    }
+    .heading1{
+        margin-top: 2%;
+        font-size:3vh;
+        
+        /* font-family: 'Sofia'; */
         margin-bottom: 2%;
     }
     .imagelist{
@@ -49,6 +56,9 @@ background: linear-gradient(90deg, rgba(253,253,255,1) 1%, rgba(255,255,255,1) 1
        
    }
    
+   .container{
+       width:90%;
+   }
     .desc{
     display: block;
     margin: 0 auto;
@@ -76,6 +86,11 @@ margin-top: 2%;}
     font-family: 'Poppins';
 
 }
+.area1{
+   
+    font-family: 'Poppins';
+
+}
 form{
     display: inline;
     float:right;
@@ -83,27 +98,75 @@ form{
     
 }
 .btn1{
-    padding-bottom: 1%;
+    height: 40px;
+  
+    color: black;
+    font-family: "Poppins";
+    border-radius: 2px;
+    border-style: solid;
+    border-color: black;
+    margin-top: 2%;
+    
 }
 
+.header{
+    height: 100px;
+}
+.btx{
+    background-color: transparent;
+   border-color: transparent;
+margin-top: 10%;
+}
+.dropdown{
+    width:15%;
+    height: 40px;
+    text-align: center;
+    background-color: transparent; border-style: solid;
+    border-color: black;
+  
+}
+p.area1{
+    font-size: 3vh;
+}
+.btn{
+    height: 40px;
+}
+.inps{
+        margin-top: 2%;
+        width: 70%;
+        border-radius: 2px;
+        border-style: solid;
+        border-color: black;
+        height:40px;
+        text-align: center;
+        background-color: transparent;
 
+    }
+    ::placeholder{
+        font-family: 'Poppins';
+        text-align:center;
+    }
+    .mg{
+        background-color: transparent;
+    }
     </style>
 </head>
 
 <body>
     
     <div class="container">
-    <span class="header">
+    <div class="header">
         
-        <img src="https://www.nogozo.com/static/mainapp/img/logo.png" height="80px" width="15%">
+        <img class="mg" src="https://pbs.twimg.com/profile_images/448209321562624000/dNzzZNSg_400x400.jpeg" height="100px" style="padding-bottom: 1%;" width="120px">
         
-      
-        <i class="fa fa-sign-out-alt" onclick="logout()" data-toggle="tooltip" title="Logout!"></i>
-        <i class="fa fa-user-edit " data-toggle="tooltip" title="Edit UserData!"></i>
-        <i class="fa fa-shopping-cart " data-toggle="tooltip" title="Cart"></i>
-        <i class="fa fa-map-marker-alt"> <span class="area">{{area}}</span></i>
-    </span>
+      <form action="/logout" method="POST"><button class=" btn btx">
+        <span  class="fa fa-sign-out-alt"  data-toggle="tooltip" title="Logout!"></span></button></form>
+        <form action=""> <button class=" btn btx"> <span class="fa fa-user-edit " data-toggle="tooltip" title="Edit UserData!"></span></button> </form>
+        <form action=""> <button class=" btn btx"><span class="fa fa-shopping-cart " data-toggle="tooltip" title="Cart"></span></button></form>
+             
+    </div>
     <center>
+        
     <div class="deals">
         <div class="heading">Welcome Back {{email}} !</div>
         <div class="heading"><i class="fas fa-dumpster-fire"></i> Deals for the day</div>
@@ -114,7 +177,7 @@ form{
           </div>
     </div>
 </center>
-<center>
+<!-- <center>
 <div class="cat">
     <div class="heading"><i class="fas fa-braille"></i> Categories</div>
     <div class="blocks">
@@ -183,7 +246,30 @@ form{
     </div>
    
 </div>
+</center> -->
+<center>
+<div class="fas fa-map-marker-alt "><p class="area1"> Delivering to {{area}}</p></div>
 </center>
+<center>
+    
+    <span class="inputs">
+        <select class="dropdown" id="sel1" name="dis" required >
+            <option>All</option>
+            <option>Grocery</option>
+            <option>Stationary</option>
+            <option>Electronics</option>
+            <option>Food and Pastry</option>
+            <option>Medicines</option>
+            <option>Water Can</option>
+            <option>We Orginals</option>
+            
+          </select> <input class="inps" placeholder="Search for Items!" />
+          <button class="btn1  btn-warning">Search <i class="fab fa-sistrix"></i></button></span>
+          
+   
+</center>
+
+
 </div>
 
 </body>
@@ -208,11 +294,5 @@ form{
     $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();   
 });
-function logout(){
-    var formData='1';
-    var request = new XMLHttpRequest();
-request.open("POST", "http://127.0.0.1:5000/logout");
-request.send(formData);
-window.location.href = window.location.href;
-}
+
     </script>

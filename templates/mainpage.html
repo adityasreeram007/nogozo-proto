@@ -15,7 +15,10 @@
     <title>Norozo</title>
 </head>
 <style>
+    form{
+        width: max-content;
 
+    }
     img{
         margin-bottom: 2%;
     }
@@ -24,13 +27,13 @@
         background-color: white;
     }
     .box{
-        margin-top:25% ;
-        width:80%;
+        margin-top:20% ;
+        width:100%;
 
     }
     .inps{
-        margin-top: 2%;
-        width: 40%;
+        margin-top: 4%;
+        width: 100%;
         border-radius: 6px;
         border-style: solid;
         border-color: black;
@@ -45,10 +48,12 @@
         margin-top: 2%;
     }
     .btn1{
-        width:40%;
+        margin-top: 10%;
+        width:100%;
     }
     .btn2{
-        width:15%;
+        margin-top: 5%;
+        width:100%;
     }
     .heading{
         margin-top: 2%;
@@ -69,7 +74,7 @@
         
         <center>
             <div class="box">
-    <div class="head"><img src="https://www.nogozo.com/static/mainapp/img/logo.png" height="80px" width="15%"></div></div>
+    <div class="head"><img src="https://pbs.twimg.com/profile_images/448209321562624000/dNzzZNSg_400x400.jpeg" height="180px" width="150px"></div></div>
     <span class="heading">SignIn</span>
     <form method="POST" action="/login">
         <input class="inps" type="text" name="email" placeholder="E-mail/Phone" /><br>
@@ -77,10 +82,11 @@
         <button class="btn btn-info btn1">Login</button>
     </form>
         <div class="inpgrp">
-            <span class="signup">
-                <a><button class="btn btn-dark btn2"><span class="bt">Forgot password?</span></button></a>
-               <button class="btn btn-dark btn2" onclick="location.href='http://127.0.0.1:5000/signup'"><span class="bt">SignUp</span></button>
-            </span>
+           
+
+                <form method="POST" action=""><button class="btn btn-dark btn2">Forgot password?</button></form>
+                <form method="GET" action="/signup"><button class="btn btn-dark btn2">SignUp</button></form>
+          
         </div>
 
         <div class="msg">{{msg}}</div>

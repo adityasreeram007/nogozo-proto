@@ -24,27 +24,28 @@
         background-color: white;
     }
     .box{
-        margin-top:20% ;
+        margin-top:10% ;
         width:80%;
 
     }
-    .inps{
-        margin-top: 2%;
-        width: 40%;
+    
+        .inps{
+        margin-top: 3%;
+        width:75%;
         border-radius: 6px;
-        
+        border-style: solid;
         border-color: black;
         height:40px;
         text-align: center;
-    }
+        }
     ::placeholder{
         font-family: 'Poppins';
         text-align:center;
     }
    
     .inps1{
-        margin-top: 2%;
-        width: 30%;
+        margin-top: 3%;
+        width: 50%;
         border-radius: 6px;
         border-style: solid;
         border-color: black;
@@ -52,7 +53,7 @@
         text-align: center;
     }
     .btn1{
-        width:40%;
+        width:70%;
         margin-top: 2%;
     }
     .btn2{
@@ -63,12 +64,12 @@
         width: 10%;
     }
     .dropdown{
-        width:40%;
-        margin-top:2%;
+        width:75%;
+        margin-top:3%;
         border-color: black;
     }
     .heading{
-        margin-top: 2%;
+       
         font-size:3vh;
         font-family: 'Sofia';
     }
@@ -78,7 +79,7 @@
         
         <center>
             <div class="box">
-    <div class="head"><img src="https://www.nogozo.com/static/mainapp/img/logo.png" height="80px" width="15%"></div></div>
+    <div class="head"><img src="https://pbs.twimg.com/profile_images/448209321562624000/dNzzZNSg_400x400.jpeg" height="180px" width="150px"></div></div>
     <span class="heading">LocationInfo</span>
     <form method="POST" action="/saveloc">
         <input class="inps" type="text" name="email" id="email" placeholder="E-mail"  /><br>
@@ -89,27 +90,28 @@
         
         <select class="form-control dropdown" id="sel1" name="dis" required >
             <option>Select Your District</option>
-            <option>Agra</option>
-            <option>Mathura</option>
-            <option>Manipur</option>
-            <option>Firozabad</option>
+            <option>Chennai</option>
+            <option>Chengalpattu</option>
+            <option>Kancheepuram</option>
+            <option>Thiruvallur</option>
           </select>
           <select class="form-control dropdown" id="sel1" name="area" required >
-            <option>Select Your Area</option>
-            <option id="Agra0">Rohta</option>
-            <option id="Agra1">Shamshabad Road</option>
-            <option id="Agra2">Agra Cantonment Road</option>
-            <option id="Agra3">Shastripuram</option>
-            <option id="Agra4">fatehabad road</option>
-            <option id="Mathura0">Dampier Nagar</option>
-            <option id="Mathura1">Giriraj Govardhan Colony</option>
-            <option id="Firozabad0">Firozabad Main</option>
+            <option>Select Your NearBy Area</option>
+            <option id="Agra0">Adayar</option>
+            <option id="Agra1">Velachery</option>
+            <option id="Agra2">Kodambakkam</option>
+            <option id="Agra3">Solinganallur</option>
+            <option id="Agra4">Nungambakkam</option>
+            <option id="Mathura0">RK Puram</option>
+            <option id="Mathura1">Ponamallee</option>
+            <option id="Firozabad0">Royapetta</option>
             
           </select>
           <input class="inps" type="text"  pattern="[1-9]{1}[0-9]{5}" name="pin" placeholder="Pincode"/><br>
           <button class="btn btn-info btn1">Confirm Location & Shop ></button>
     </form>
     </center>
+    
 </div>
 </body>
 </html>

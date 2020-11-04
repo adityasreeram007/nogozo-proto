@@ -7,14 +7,18 @@ app.secret_key="wearelegends"
 @app.route('/')
 def mainpage():
     if (request.cookies.get('username')!='None'):
-        conn=sql.connect('Database.db')
-        q='select area from locinfo where email=?'
-        param=(request.cookies.get('username'),)
-        c=conn.execute(q,param)
-        print(c)
-        res=c.fetchall()
-        area=res[0][0]
-        return render_template('landingpage.html',email=request.cookies.get('username').split('@')[0],area=area)
+        try:
+            conn=sql.connect('Database.db')
+            q='select area from locinfo where email=?'
+            param=(request.cookies.get('username'),)
+            c=conn.execute(q,param)
+            print(c)
+            res=c.fetchall()
+            
+            area=res[0][0]
+            return render_template('landingpage.html',email=request.cookies.get('username').split('@')[0],area=area)
+        except IndexError:
+            return render_template('mainpage.html')
     else:
 
         return render_template('mainpage.html')
@@ -96,4 +100,4 @@ def logout():
     resp.set_cookie('username','None' )
     return resp
 if __name__=='__main__':
-    app.run(debug=True)
+    app.run(debug=True,host="0.0.0.0",port=5002)
